@@ -1,6 +1,6 @@
 {
   "name": "@aasaam/aes",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simplified cross language Advanced Encryption Standard (AES)",
   "main": "index.js",
   "types": "index.d.ts",
