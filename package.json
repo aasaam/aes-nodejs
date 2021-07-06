@@ -1,0 +1,66 @@
+{
+  "name": "@aasaam/aes",
+  "version": "0.0.0",
+  "description": "Simplified cross language Advanced Encryption Standard (AES)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aasaam/aes.git"
+  },
+  "minimum-stability": "dev",
+  "keywords": [
+    "aasaam",
+    "aes-256-gcm",
+    "aes",
+    "cross-language",
+    "decryption",
+    "encryption",
+    "ttl"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "jest": {
+    "testRegex": ".spec.js$",
+    "collectCoverageFrom": [
+      "index.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "json-summary",
+      "text",
+      "lcov",
+      "html",
+      "clover"
+    ],
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@types/jest": "^26",
+    "@types/node": "^16",
+    "@typescript-eslint/experimental-utils": "^4",
+    "eslint": "^7",
+    "eslint-config-airbnb": "^18",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-sonarjs": "^0",
+    "jest": "^27",
+    "prettier": "^2",
+    "typescript": "^4"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit -p jsconfig.json",
+    "test:cover": "jest --detectOpenHandles --runInBand --collectCoverage",
+    "test": "jest --detectOpenHandles --runInBand"
+  },
+  "authors": [
+    {
+      "name": "Muhammad Hussein Fattahizadeh",
+      "email": "m@mhf.ir"
+    }
+  ],
+  "license": "MIT"
+}
