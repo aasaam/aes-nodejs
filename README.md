@@ -15,6 +15,12 @@
     <a href="https://www.npmjs.com/package/@aasaam/aes-nodejs">
       <img alt="npm type definitions" src="https://img.shields.io/npm/types/@aasaam/aes-nodejs">
     </a>
+    <a href="https://david-dm.org/aasaam/aes-nodejs">
+      <img alt="David" src="https://img.shields.io/david/aasaam/aes-nodejs">
+    </a>
+    <a href="https://david-dm.org/aasaam/aes-nodejs?type=dev">
+      <img alt="David" src="https://img.shields.io/david/dev/aasaam/aes-nodejs">
+    </a>
     <a href="https://github.com/aasaam/aes-nodejs/blob/master/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/aasaam/aes-nodejs">
     </a>
