@@ -9,6 +9,9 @@
     Simplified cross language Advanced Encryption Standard (AES)
   </p>
   <p>
+    <a href="https://github.com/aasaam/aes-nodejs/actions/workflows/node.yml" target="_blank">
+      <img src="https://github.com/aasaam/aes-nodejs/actions/workflows/node.yml/badge.svg" alt="PHP" />
+    </a>
     <a href="https://www.npmjs.com/package/@aasaam/aes-nodejs">
       <img alt="npm" src="https://img.shields.io/npm/v/@aasaam/aes-nodejs">
     </a>
@@ -36,7 +39,7 @@ Features:
 Currently supported following languages:
 
 - [Node.js](https://github.com/aasaam/aes-nodejs)
-- [PHP](https://github.com/aasaam/aes-php)
+- [PHP](https://github.com/aasaam/aes-nodejs)
 - [Go](https://github.com/aasaam/aes-go)
 
 <div>
