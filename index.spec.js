@@ -29,24 +29,28 @@ describe('AasaamAES', () => {
   });
 
   it('owner data', async () => {
-    const serverKey = AasaamAES.generateKey();
+    const test = JSON.parse(
+      await fs.readFile(`${__dirname}/test.json`, { encoding: 'utf-8' }),
+    );
 
     const mustSecureMessage = 'very secret message';
 
     const clientDataSender = [
       '1.1.1.1',
-      'curl 1/1',
+      'user-agent',
     ];
 
-    const clientDataSenderKey = AasaamAES.generateHashKey(serverKey, clientDataSender);
+    const clientDataSenderKey = AasaamAES.generateHashKey(test.key, clientDataSender);
     const aesEncryption = new AasaamAES(clientDataSenderKey);
-    const networkData = aesEncryption.encryptTTL(mustSecureMessage, 10);
+    const networkData = aesEncryption.encrypt(mustSecureMessage);
 
-
-    const clientDataReceiverKey = AasaamAES.generateHashKey(serverKey, clientDataSender);
+    const clientDataReceiverKey = AasaamAES.generateHashKey(test.key, clientDataSender);
     const aesDecryption = new AasaamAES(clientDataReceiverKey);
-    const sameData = aesDecryption.decryptTTL(networkData);
+    const sameData = aesDecryption.decrypt(networkData);
+
+    const sameDataGlobal = aesDecryption.decrypt(test.networkData);
 
     expect(sameData).toEqual(mustSecureMessage);
+    expect(sameDataGlobal).toEqual(sameDataGlobal);
   });
 });
