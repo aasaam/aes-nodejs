@@ -33,10 +33,7 @@ class AasaamAES {
    * @return {String} Base64 encoded hash key
    */
   static generateHashKey(key, props) {
-    return crypto.createHash('sha256').update(
-      key,
-      props.join(':'),
-    ).digest().toString('base64');
+    return crypto.createHash('sha256').update(`${key}:${props.join(':')}`).digest().toString('base64');
   }
 
   /**
