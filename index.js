@@ -26,6 +26,20 @@ class AasaamAES {
   }
 
   /**
+   * Generate encryption key for special props
+   *
+   * @param  {String}   key Original encryption key
+   * @param  {String[]} props Array of properties, orders matters
+   * @return {String} Base64 encoded hash key
+   */
+  static generateHashKey(key, props) {
+    return crypto.createHash('sha256').update(
+      key,
+      props.join(':'),
+    ).digest().toString('base64');
+  }
+
+  /**
    * Encrypt message with time to live
    *
    * @param  {String} message Message to be encrypted
@@ -49,12 +63,15 @@ class AasaamAES {
    */
   decryptTTL(encryptedTTLMessage) {
     try {
-      const { message, ttl } = JSON.parse(this.decrypt(encryptedTTLMessage));
-      if (ttl >= Math.round(Date.now() / 1000)) {
-        return message;
+      const decrypted = JSON.parse(this.decrypt(encryptedTTLMessage));
+      if (
+        typeof decrypted.message === 'string'
+        && typeof decrypted.ttl === 'number'
+        && decrypted.ttl >= Math.round(Date.now() / 1000)
+      ) {
+        return decrypted.message;
       }
     } catch (e) {
-
       // nothing
     }
 

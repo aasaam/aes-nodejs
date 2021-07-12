@@ -12,6 +12,9 @@
     <a href="https://github.com/aasaam/aes-nodejs/actions/workflows/node.yml" target="_blank">
       <img src="https://github.com/aasaam/aes-nodejs/actions/workflows/node.yml/badge.svg" alt="PHP" />
     </a>
+    <a href="https://coveralls.io/github/aasaam/aes-nodejs">
+      <img alt="Coveralls" src="https://img.shields.io/coveralls/github/aasaam/aes-nodejs">
+    </a>
     <a href="https://www.npmjs.com/package/@aasaam/aes-nodejs">
       <img alt="npm" src="https://img.shields.io/npm/v/@aasaam/aes-nodejs">
     </a>
